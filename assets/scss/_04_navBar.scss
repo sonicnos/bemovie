@@ -1,0 +1,11 @@
+@import '02_variable', '03_mixin';
+
+nav {
+    @include setNavBar;
+    
+    .nav-container {
+        @include navBarContainer;
+    }
+
+    
+}

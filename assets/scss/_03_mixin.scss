@@ -1,0 +1,70 @@
+@mixin centerContainer ($width) {
+    max-width: $width;
+    margin: 0 auto;
+}
+
+@mixin min-width ($width) {
+    min-width: $width;
+    margin: 0 auto;
+}
+
+@mixin displayFlexAllCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin textStyling ($fontSize, $fontWeight) {
+    color: $white;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    font-family: 'Inter', sans-serif;
+}
+
+@mixin resetSection {
+    @include centerContainer (1200px);
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin setNavBar {
+    background-color: $navBottomColor;
+    height: 100px;
+    font-family: 'Inria Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    
+    a {
+        color: $white;
+    }
+    
+}
+
+@mixin navBarContainer {
+    @include centerContainer (1080px);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        font-size: 2.25rem;
+
+        span {
+            color: $red;
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        font-size: 0.875rem;
+        letter-spacing: 0.42px;
+    }
+}
+
+@mixin postionHover {
+
+}
+                

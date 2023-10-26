@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  background-color: #141517;
+  height: 100px;
+  font-family: "Inria Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+nav a {
+  color: #fff;
+}
+nav .nav-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .nav-container .logo {
+  font-size: 2.25rem;
+}
+nav .nav-container .logo span {
+  color: #C00;
+}
+nav .nav-container ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 0.875rem;
+  letter-spacing: 0.42px;
+}
+
+.search-bar-container {
+  height: 180px;
+  max-width: 275px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar-container .search-bar-box {
+  height: 44px;
+  display: flex;
+}
+.search-bar-container .search-bar-box #search-bar {
+  width: 228px;
+  border-radius: 8px 0px 0px 8px;
+  outline: none;
+  border: none;
+  padding-left: 18px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: black;
+  font-style: normal;
+}
+.search-bar-container .search-bar-box #search-bar::-moz-placeholder {
+  opacity: 0.9;
+}
+.search-bar-container .search-bar-box #search-bar::placeholder {
+  opacity: 0.9;
+}
+.search-bar-container .search-bar-box button {
+  border: none;
+  width: 44px;
+  background-color: #C00;
+  border-radius: 0px 8px 8px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar-container .search-bar-box button img {
+  width: 18px;
+  height: 14px;
+}
+
+.results-search {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 90px;
+}
+.results-search .search-p {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  min-width: 1000px;
+  margin: 0 auto;
+}
+.results-search .display-results {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.results-search .display-results a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.results-search .display-results .grid-results {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+}
+.results-search .display-results .grid-results .slide-1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.results-search .display-results .grid-results .slide-1 div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 235px;
+}
+.results-search .display-results .grid-results .slide-1 div h2, .results-search .display-results .grid-results .slide-1 div h3, .results-search .display-results .grid-results .slide-1 div .movie-category, .results-search .display-results .grid-results .slide-1 div .review {
+  text-align: center;
+  width: 160px;
+}
+.results-search .display-results .grid-results .slide-1 div h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+.results-search .display-results .grid-results .slide-1 div h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  color: #B8B8B8;
+}
+.results-search .display-results .grid-results .slide-1 div .movie-category {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+.results-search .display-results .grid-results .slide-1 div .review {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  color: #C00;
+}
+.latest-release {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 95px;
+}
+.latest-release .latest-release-p {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  min-width: 1000px;
+  margin: 0 auto;
+}
+.latest-release .display-latest-release {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.latest-release a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.latest-release .grid-latest-release {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.movie-by-genre {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 110px;
+}
+.movie-by-genre .movie-by-genre-title {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  margin-bottom: 46px;
+}
+.movie-by-genre .genre-category {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  margin-bottom: 25px;
+}
+.movie-by-genre .genre-category li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+.movie-by-genre .genre-category .active {
+  background-color: #C00;
+  width: 84px;
+  height: 33px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.movie-by-genre .horizontal-bar {
+  width: 599px;
+  height: 2px;
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+.movie-by-genre .category-p {
+  min-width: 1000px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #141517;
+  height: 100px;
+  font-family: "Inria Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+footer a {
+  color: #fff;
+}
+footer .footer-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footer-container .logo {
+  font-size: 2.25rem;
+}
+footer .footer-container .logo span {
+  color: #C00;
+}
+footer .footer-container ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 0.875rem;
+  letter-spacing: 0.42px;
+}
+footer .footer-container p {
+  color: #B8B8B8;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.modal-register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 650px;
+  background-color: black;
+}
+.modal-register .close-button {
+  width: 16px;
+  height: 16px;
+}
+.modal-register .btnTab {
+  display: flex;
+  height: 54px;
+  max-width: 290px;
+  margin: 0 auto;
+  margin: 65px 50px 54px 50px;
+}
+.modal-register .btnTab a {
+  color: #fff;
+  width: 146px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.72px;
+}
+.modal-register .btnTab .login {
+  background-color: #C00;
+  border-radius: 0px 8px 8px 0px;
+}
+.modal-register .btnTab .signup {
+  border: 1px solid #fff;
+  border-radius: 8px 0px 0px 8px;
+}
+.modal-register form {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 290px;
+  margin: 0 auto;
+  gap: 25px;
+}
+.modal-register form input[type=text],
+.modal-register form input[type=password] {
+  border: none;
+  outline: none;
+  width: 250px;
+  height: 44px;
+  border-radius: 8px;
+  color: black;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-left: 20px;
+}
+.modal-register form .remember label {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+.modal-register .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.modal-register .bottom button {
+  border: none;
+  outline: none;
+  width: 288px;
+  height: 47px;
+  max-width: 290px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  background-color: #C00;
+  border-radius: 8px;
+}
+.modal-register .bottom .signup {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  gap: 19px;
+}
+.modal-register .bottom .signup p {
+  margin-top: 19px;
+}
+.modal-register .bottom .signup a {
+  color: #C00;
+}
+.modal-register > * {
+  margin: 0 0 0.5rem 0;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+body {
+  height: 100vh;
+  background-color: #191B20;
+  position: relative;
+}/*# sourceMappingURL=main.css.map */

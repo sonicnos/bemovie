@@ -1,0 +1,27 @@
+@import '02_variable', '03_mixin';
+
+.latest-release {
+    @include resetSection;
+    margin-bottom: 95px;
+
+    .latest-release-p {
+        @include textStyling(1rem, 400);
+        @include min-width (1000px);
+    }
+
+    .display-latest-release {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        @include displayFlexAllCenter;
+    }
+
+    .grid-latest-release {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}

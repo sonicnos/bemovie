@@ -1,0 +1,44 @@
+@import '02_variable', '03_mixin';
+
+.search-bar-container {
+    height: 180px;
+    @include centerContainer(275px);
+    @include displayFlexAllCenter;
+
+    .search-bar-box {
+        height: 44px;
+        display: flex;
+
+
+
+        #search-bar {
+            width: 228px;
+            border-radius: 8px 0px 0px 8px;
+            outline: none;
+            border: none;
+            padding-left: 18px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: black;
+            font-style: normal;
+
+            &::placeholder {
+                opacity: .9;
+            }
+        }
+
+        button {
+            border: none;
+            width: 44px;
+            background-color: $red;
+            border-radius: 0px 8px 8px 0px;
+            @include displayFlexAllCenter;
+
+            img {
+                width: 18px;
+                height: 14px;
+            }
+        }
+    }
+}
