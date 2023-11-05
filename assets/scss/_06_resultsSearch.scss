@@ -1,6 +1,9 @@
 @import '02_variable', '03_mixin';
 
-.results-search {
+
+.bloc_swiper {
+    position: relative;
+    // background-color: red;
     @include resetSection;
     margin-bottom: 90px;
 
@@ -9,33 +12,47 @@
         @include min-width (1000px);
     }
     
-    .display-results {
+    .display {
+        max-width: 1000px;
+
         margin-top: 10px;
-        display: flex;
-        justify-content: space-between;
+        // display: flex;
+        // justify-content: space-between;
+        // max-width: 1000px;
         
         a {
-            @include displayFlexAllCenter;
+            // @include displayFlexAllCenter;
         }
 
-        .grid-results {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+        .grid {
+            // display: grid;
+            // grid-template-columns: repeat(4, 1fr);
+            // gap: 20px;
             position: relative;
 
             .slide-1 {
                 position: relative;
+                overflow: hidden;
                 @include displayFlexAllCenter;
 
-                div {
+                .slide-card-1 {
+                    // background-color: black;
                     position: absolute;
                     top: 0;
                     left: 0;
+                    // z-index: -1;
                     @include displayFlexAllCenter;
+                    gap: 10px;
                     flex-direction: column;
                     height: 100%;
                     width: 235px;
+                    cursor: pointer;
+                    
+                    h2,
+                    h3,
+                    p{
+                        opacity: 0;
+                    }
 
                     h2, h3, .movie-category, .review {
                         text-align: center;
@@ -44,12 +61,10 @@
 
                     h2 {
                         @include textStyling(1.25rem, 700);
-
                     }
 
                     h3{
                         @include textStyling(1.25rem, 700);
-                        color: $grey;
                     }
 
                     .movie-category {
@@ -58,16 +73,68 @@
 
                     .review {
                         @include textStyling(2rem, 700);
-                        color: $red;
+                    }
+
+                    &:hover{
+                        background-color: rgba(0, 0, 0, 0.9);
+                        h2,
+                        h3,
+                        p{
+                            opacity: 1;
+                        }
+                        .movie-title{
+                            color: $white;
+                        }
+                        .movie-release-date,
+                        .movie-category{
+                            color: $grey;
+                        }
+                        .star,
+                        .review{
+                            color: $red;
+                        }
                     }
                 }
             }
 
-            .slide-2 {
-                
+            
+            .picture{
+                height: 351px;
+                object-fit: cover;
             }
 
 
         }
     }
+
+    .genre{
+        height: 351px;
+    }
+}
+
+.swiper-slide{
+    background-image: url('https://static.thenounproject.com/png/3271619-200.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.swiper-slide,
+.swiper-wrapper{border: solid 3px transparent;}
+
+.swiper-button-prev,
+.swiper-button-next{
+    top: 50%;
+}
+
+.swiper-button-prev{
+    left: 10px;
+}
+.swiper-button-next{
+    right: 10px;
+}
+
+.swiper-button-next::after, 
+.swiper-button-prev::after{
+    content: '';
 }

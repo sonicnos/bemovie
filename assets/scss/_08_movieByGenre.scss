@@ -10,7 +10,9 @@
         margin-bottom: 46px;
     }
 
-
+    .bloc_swiper{
+        height: 351px;
+    }
 
     .genre-category {
         display: flex;
@@ -21,6 +23,8 @@
         li {
             @include displayFlexAllCenter;
             @include textStyling(1rem, 400);
+            cursor: pointer;
+            // padding: 0 10px;
         }
 
         .active {
