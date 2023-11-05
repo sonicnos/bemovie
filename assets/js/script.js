@@ -25,7 +25,7 @@ closeModal.addEventListener("click", () => {
 
 
 
-
+// OBJET LIBRAIRY SWIPER 
 function swiperMode(className, next, prev, params) {
   new Swiper(className, {
       effetct: "fade",
@@ -48,7 +48,7 @@ swiperMode('.swiper_genre', '.genre-next', '.genre-prev', 4 )
 
 
 
-
+// SIBLES
 let swiperWrapperSearch = document.querySelector('.results-search .swiper-wrapper')
 let swiperWrapperRelease = document.querySelector('.latest-release .swiper-wrapper')
 let swiperWrapperGenre = document.querySelector('.genre .swiper-wrapper')
@@ -56,7 +56,7 @@ let templateMovie = document.querySelector('.templateMovie')
 let modalMovie = document.getElementById('modal-movie')
 
 
-
+// AUTHORIZATION
 const option = {
     method: 'GET',
     headers: {
@@ -69,7 +69,7 @@ let formSearch = document.querySelector('.search-bar-box')
 
 
 
-
+// HTML INJECTION
 async function swiperSlideHtml(movie, swiperWrapper) {
   let swiperSlide = document.createElement('div')
         let swiperCard = document.createElement('div')
@@ -102,21 +102,20 @@ async function swiperSlideHtml(movie, swiperWrapper) {
           swiperSlide.append(img,swiperCard)
           swiperWrapper.append(swiperSlide)
         }, 500);
-        
 }
 
 
 
-function cashBnts() {
-  if (swiperWrapperSearch.querySelector('.swiper-slide') == null) {
-    document.querySelector('.search_next').style.opacity = '0'
-    document.querySelector('.search_prev').style.opacity = '0'
-  } else {
-    document.querySelector('.search_next').style.opacity = '1'
-    document.querySelector('.search_prev').style.opacity = '1'
-  }
+// function cashBnts() {
+//   if (swiperWrapperSearch.querySelector('.swiper-slide') == null) {
+//     document.querySelector('.search_next').style.opacity = '0'
+//     document.querySelector('.search_prev').style.opacity = '0'
+//   } else {
+//     document.querySelector('.search_next').style.opacity = '1'
+//     document.querySelector('.search_prev').style.opacity = '1'
+//   }
   
-}
+// }
 // cashBnts()
 
 
@@ -154,7 +153,7 @@ dataFetch(`https://api.themoviedb.org/3/discover/movie?include_adult=true&includ
 
 
 
-// LIST BY GENRES
+// LIST BY GENRES 
 let genre = 35
 dataFetch(`https://api.themoviedb.org/3/discover/movie?&with_genres=${genre}`,swiperWrapperGenre ,option)
 
@@ -180,8 +179,9 @@ const tabGenresID= {
   Western        : 37,
 };
 
-console.log(tabGenresID.Action);
+// console.log(tabGenresID.Action);
 
+// CHOISE GENRE
 let genreCategory = document.querySelector('.genre-category')
 genreCategory.querySelectorAll('li').forEach(li => {
   
@@ -202,13 +202,13 @@ genreCategory.querySelectorAll('li').forEach(li => {
       console.log(error);
     }
 
-    swiperWrapperGenre.innerHTML = ''
-    // genre = e.target.innerText.toLowerCase().trim()
+    // swiperWrapperGenre.innerHTML = ''
     
     dataFetch(`https://api.themoviedb.org/3/discover/movie?&with_genres=${genre}`,swiperWrapperGenre ,option)
 })})
 
 
+// Modal INFOS MOVIES
 document.addEventListener('click', (e)=>{
       e.stopImmediatePropagation()
   document.querySelectorAll('.slide-card-1')
@@ -234,7 +234,7 @@ document.addEventListener('click', (e)=>{
         modalMovie.querySelector('.note').innerText = response.vote_average
 
         modalMovie.querySelector('.txt').innerText = response.overview
-        // modalMovie.querySelector('.actors').innerText =
+        // modalMovie.querySelector('.actors').innerText = 
         modalMovie.querySelector('.cast').appendChild(response.vote_average)
       })
       .catch(err => console.error(err));
@@ -244,7 +244,7 @@ document.addEventListener('click', (e)=>{
   })
 })
 
-
+// CLOSE MODAL
 document.querySelector('.btn_modal_movie_off')
 .addEventListener('click', ()=>{
   modalMovie.close()
