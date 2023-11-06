@@ -1,5 +1,24 @@
 @import '02_variable', '03_mixin';
 
+#modal-movie {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 650px;
+  //background-color: black;
+  .movie_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
 .modal-register {
   position: absolute;
   top: 50%;
@@ -71,6 +90,7 @@
       }
 
   }
+
   .bottom {
     @include displayFlexAllCenter;
     flex-direction: column;

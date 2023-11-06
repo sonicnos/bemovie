@@ -18,8 +18,8 @@
             </div>
             <ul>
                 <li><a href="#">Search</a></li>
-                <li><a href="#">Latest</a></li>
-                <li><a href="#">Genres</a></li>
+                <li><a href="#latest">Latest</a></li>
+                <li><a href="#genres">Genres</a></li>
                 <li><a href="#" class="open-button-register">Register</a></li>
                 <li><a href="#" class="open-button-signin">Signin</a></li>
             </ul>
@@ -44,7 +44,7 @@
 
 
     <section class="latest-release bloc_swiper">
-        <p class="latest-release-p">Latest releases</p>
+        <p class="latest-release-p" id="latest">Latest releases</p>
         <a class="release-next swiper-button-next" href="#">
             <img src="./assets/images/right-vector.png" alt="vector-right"></a>
         <div class="display swiper swiper_release">
@@ -55,7 +55,7 @@
     </section>
 
 
-    <section class="movie-by-genre ">
+    <section class="movie-by-genre" id="genres">
         <h2 class="movie-by-genre-title">Movies by genre</h2>
         <ul class="genre-category">
             <li class="active">Comedy</li>
@@ -92,8 +92,8 @@
             </div>
             <ul>
                 <li><a href="#">Search</a></li>
-                <li><a href="#">Latest</a></li>
-                <li><a href="#">Genres</a></li>
+                <li><a href="#latest">Latest</a></li>
+                <li><a href="#genres">Genres</a></li>
                 <li><a href="#" class="open-button-register">Register</a></li>
                 <li><a href="#">Signin</a></li>
             </ul>
@@ -131,29 +131,32 @@
             <div class="movie_item">
 
                 <img src="" alt="">
+                <div class="info">
+                    <div class="infos_head">
+                        <!-- title -->
+                        <h3 class="title">The Godfather part III</h3>
+                        <!-- date -->
+                        <p class="date">1990</p>
+                        <!-- star & note -->
+                        <i class='bx bxs-star'></i> 
+                        <p class="note"></p>
+                        <!-- genre -->
+                        <p class="genre"></p>
+                    </div>
+                
 
-                <div class="infos_head">
-                    <!-- title -->
-                    <h3 class="title">The Godfather part III</h3>
-                    <!-- date -->
-                    <p class="date">1990</p>
-                    <!-- star & note -->
-                    <i class='bx bxs-star'></i> 
-                    <p class="note"></p>
-                    <!-- genre -->
-                    <p class="genre"></p>
-                </div>
 
-                <div class="infos_body">
-                    <p class="txt">lorem</p>
-                    <br>
-                    <p class="cast">
-                        <span>Cast: </span>
-                        <p class="actors">
-                        <!-- Will Smith, The Rock -->
-                        <!-- pas d'info -->
+                    <div class="infos_body">
+                        <p class="txt">lorem</p>
+                        <br>
+                        <p class="cast">
+                            <span>Cast: </span>
+                            <p class="actors">
+                            <!-- Will Smith, The Rock -->
+                            <!-- pas d'info -->
+                            </p>
                         </p>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
