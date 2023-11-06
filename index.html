@@ -21,7 +21,7 @@
                 <li><a href="#">Latest</a></li>
                 <li><a href="#">Genres</a></li>
                 <li><a href="#" class="open-button-register">Register</a></li>
-                <li><a href="#">Signin</a></li>
+                <li><a href="#" class="open-button-signin">Signin</a></li>
             </ul>
         </div>
     </nav>
@@ -107,16 +107,16 @@
             <a href="#" class="signup">Signup</a>
             <a href="#" class="login">Login</a>
         </div>
-        <form>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
+        <form class="register">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
             <div class="remember">
                 <input type="checkbox" name="remember" id="">
                 <label for="remember">Remember me</label>
             </div>    
         </form>
         <div class="bottom">
-            <button type="submit">Login</button>
+            <button class="register_btn" type="submit">Login</button>
             <div class="signup">
                 <a href="#">I forgot my password</a>
                 <p>Not a member yer ? <a href="#">Sign up</a></p>
@@ -136,11 +136,12 @@
                     <!-- title -->
                     <h3 class="title">The Godfather part III</h3>
                     <!-- date -->
-                    <span class="date">1990</span>
+                    <p class="date">1990</p>
                     <!-- star & note -->
-                    <span class="note"><i class='bx bxs-star'></i> 7.4</span>
+                    <i class='bx bxs-star'></i> 
+                    <p class="note"></p>
                     <!-- genre -->
-                    <p>Crime / Drama / Thriller</p>
+                    <p class="genre"></p>
                 </div>
 
                 <div class="infos_body">
@@ -148,9 +149,10 @@
                     <br>
                     <p class="cast">
                         <span>Cast: </span>
-                        <span class="actors">
+                        <p class="actors">
                         <!-- Will Smith, The Rock -->
-                        </span>
+                        <!-- pas d'info -->
+                        </p>
                     </p>
                 </div>
             </div>
@@ -160,6 +162,7 @@
     <!-- SWIPER -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/signin-register.js"></script>
 
 </body>
 </html>

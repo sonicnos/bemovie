@@ -56,6 +56,28 @@ let templateMovie = document.querySelector('.templateMovie')
 let modalMovie = document.getElementById('modal-movie')
 
 
+const tabGenresID= {
+  Action         : 28,
+  Animation      : 16,
+  Comedy         : 35,
+  Drama          : 18,
+  Fantasy        : 14,
+  Romance        : 10749,
+  Adventure      : 12,
+  Crime          : 80,
+  Documentary    : 99,
+  Family         : 10751,
+  History        : 36,
+  Horror         : 27,
+  Music          : 10402,
+  Mystery        : 9648,
+  ScienceFiction : 878,
+  TVMovie        : 10770,
+  Thriller       : 53,
+  War            : 10752,
+  Western        : 37,
+};
+
 // AUTHORIZATION
 const option = {
     method: 'GET',
@@ -90,13 +112,29 @@ async function swiperSlideHtml(movie, swiperWrapper) {
         p_star.innerHTML = `<img src="./assets/images/star.png" alt="star">`
         p_review.classList = 'review'
         img.classList = 'picture'
+        
+        let tabTampon;
+        
+        movie.genre_ids.forEach(genreId => {
+          for (let i = 0; i < Object.keys(tabGenresID).length; i++) {
+            if (genreId == tabGenresID[Object.keys(tabGenresID)[i]]) {
+              p_category.append(`${Object.keys(tabGenresID)[i]} / `) 
+            } else {
+              console.log(false);
+            }
+          }
+        })
 
+        tabTampon = p_category.innerText.split(' ')
+        p_category.innerHTML = ""
+        tabTampon.pop()
+        tabTampon.pop()
+        tabTampon.forEach(ele => p_category.append(`${ele} `))
         
         setTimeout(() => {
           img.setAttribute('src', `https://image.tmdb.org/t/p/w300${movie.poster_path}`)
           h2.innerText = movie.title
-          h3.innerText = movie.release_date
-          p_category.innerText = 'Genre'
+          h3.innerText = movie.release_date.slice(0,4)
           p_review.innerText = Number.parseFloat(movie.vote_average).toFixed(1);
           swiperCard.append(h2, h3, p_category, p_star, p_review)
           swiperSlide.append(img,swiperCard)
@@ -104,19 +142,6 @@ async function swiperSlideHtml(movie, swiperWrapper) {
         }, 500);
 }
 
-
-
-// function cashBnts() {
-//   if (swiperWrapperSearch.querySelector('.swiper-slide') == null) {
-//     document.querySelector('.search_next').style.opacity = '0'
-//     document.querySelector('.search_prev').style.opacity = '0'
-//   } else {
-//     document.querySelector('.search_next').style.opacity = '1'
-//     document.querySelector('.search_prev').style.opacity = '1'
-//   }
-  
-// }
-// cashBnts()
 
 
 function dataFetch(url, swiper, option){
@@ -157,29 +182,6 @@ dataFetch(`https://api.themoviedb.org/3/discover/movie?include_adult=true&includ
 let genre = 35
 dataFetch(`https://api.themoviedb.org/3/discover/movie?&with_genres=${genre}`,swiperWrapperGenre ,option)
 
-const tabGenresID= {
-  Action         : 28,
-  Animation      : 16,
-  Comedy         : 35,
-  Drama          : 18,
-  Fantasy        : 14,
-  Romance        : 10749,
-  Adventure      : 12,
-  Crime          : 80,
-  Documentary    : 99,
-  Family         : 10751,
-  History        : 36,
-  Horror         : 27,
-  Music          : 10402,
-  Mystery        : 9648,
-  ScienceFiction : 878,
-  TVMovie        : 10770,
-  Thriller       : 53,
-  War            : 10752,
-  Western        : 37,
-};
-
-// console.log(tabGenresID.Action);
 
 // CHOISE GENRE
 let genreCategory = document.querySelector('.genre-category')
@@ -189,8 +191,8 @@ genreCategory.querySelectorAll('li').forEach(li => {
 
     genreCategory.querySelectorAll('li').forEach(allLi => {
       allLi.classList = '';
-      console.log(allLi);
     })
+    document.querySelector('.category-p').innerText = e.target.innerText;
 
     let tampon = e.target.innerText;
 
@@ -201,51 +203,77 @@ genreCategory.querySelectorAll('li').forEach(li => {
     } catch (error) {
       console.log(error);
     }
-
-    // swiperWrapperGenre.innerHTML = ''
     
     dataFetch(`https://api.themoviedb.org/3/discover/movie?&with_genres=${genre}`,swiperWrapperGenre ,option)
 })})
 
 
 // Modal INFOS MOVIES
+function clearModalMovie() {
+  modalMovie.querySelector('.title').innerText = ""
+  modalMovie.querySelector('img').getAttribute('src') = ""
+  modalMovie.querySelector('.date').innerText = ""
+  modalMovie.querySelector('.note').innerText = ""
+  modalMovie.querySelector('.txt').innerText = ""
+  modalMovie.querySelector('.genre').innerText = ""
+  modalMovie.querySelector('.actors').innerText = ""
+}
 document.addEventListener('click', (e)=>{
-      e.stopImmediatePropagation()
-  document.querySelectorAll('.slide-card-1')
-  .forEach(slideCard => {
-    // console.log(slideCard);
-    slideCard.addEventListener('click', (el)=>{
-      el.stopImmediatePropagation()
-      // let title = slideCard.childNodes[0]
-      // console.log(title.innerText);
-      console.log(slideCard.accessKey);
+      
+      if (e.target.accessKey) {
+        fetch(`https://api.themoviedb.org/3/movie/${e.target.accessKey}?language=en-US`, option)
+          .then(response => response.json())
+          .then(response => {
+            modalMovie.querySelector('.title').innerText = response.original_title
+            modalMovie.querySelector('img').setAttribute('src', `https://image.tmdb.org/t/p/w300${response.poster_path}`)
 
-      // dataFetch(`https://api.themoviedb.org/3/movie/${slideCard.accessKey}?language=en-US`)
+            modalMovie.querySelector('.date').innerText = response.release_date.slice(0,4)
+            modalMovie.querySelector('.note').innerText = response.vote_average.toFixed(1)
+            
 
-      fetch(`https://api.themoviedb.org/3/movie/${slideCard.accessKey}?language=en-US`, option)
-      .then(response => response.json())
-      .then(response => {
-        console.log(response);
-        // swiper.innerHTML = ""
-        modalMovie.querySelector('.title').innerText = response.original_title
-        modalMovie.querySelector('img').setAttribute('src', `https://image.tmdb.org/t/p/w300${response.poster_path}`)
+            modalMovie.querySelector('.txt').innerText = response.overview
+            let tabTampon;
+            response.genres.forEach(genre => {
+              modalMovie.querySelector('.genre').append(`${genre.name} / `)
+            })
 
-        // modalMovie.querySelector('.date').innerText =
-        modalMovie.querySelector('.note').innerText = response.vote_average
+            tabTampon = modalMovie.querySelector('.genre').innerText.split(' ')
+            modalMovie.querySelector('.genre').innerHTML = ""
+            tabTampon.pop()
+            tabTampon.pop()
+            tabTampon.forEach(ele => modalMovie.querySelector('.genre').append(`${ele} `))
+            
+            
+            fetch(`https://api.themoviedb.org/3/trending/person/day?language=en-US`, option)
+              .then(actor => actor.json())
+              .then( data => {
+                
+                data.results.forEach(actor => {
+                  
+                  actor.known_for.filter(a => {
+                    
+                    if (a.original_title == response.original_title) {
+                      modalMovie.querySelector('.actors').append(`${actor.original_name} `) 
+                    } else {}
+                  })
+                })
+              })
+              .catch(er => console.log(er))
 
-        modalMovie.querySelector('.txt').innerText = response.overview
-        // modalMovie.querySelector('.actors').innerText = 
-        modalMovie.querySelector('.cast').appendChild(response.vote_average)
-      })
-      .catch(err => console.error(err));
+          })
+          .catch(err => console.log(err));
 
-      modalMovie.showModal()
-    })
-  })
+          setTimeout(() => {
+            modalMovie.showModal()
+          }, 500);
+
+      } else {}
 })
+
 
 // CLOSE MODAL
 document.querySelector('.btn_modal_movie_off')
 .addEventListener('click', ()=>{
   modalMovie.close()
+  clearModalMovie()
 })
