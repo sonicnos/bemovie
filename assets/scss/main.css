@@ -352,16 +352,95 @@ footer .footer-container p {
   left: 50%;
   transform: translate(-50%, -50%);
   height: 650px;
+  width: 745px;
+  background-color: black;
 }
-#modal-movie .movie_item {
+#modal-movie .bloc_item .btn_modal_movie_off {
+  color: white;
+}
+#modal-movie .bloc_item .movie_item {
+  padding-left: 75px;
+  padding-right: 75px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 60px;
+  height: 550px;
 }
-#modal-movie .movie_item .info {
+#modal-movie .bloc_item .movie_item img {
+  width: 234px;
+  height: 351px;
+}
+#modal-movie .bloc_item .movie_item .info {
+  padding-top: 75px;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .title-date {
+  display: flex;
+  flex-direction: column;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .title-date .title {
+  color: #C00;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-family: Inria Sans;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .title-date .date {
+  color: #fff;
+  font-family: Inria Sans;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .note-info {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .note-info .bxs-star {
+  color: #C00;
+  font-size: 20px;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .note-info .note {
+  width: 33px;
+  height: 26px;
+  flex-shrink: 0;
+  color: #C00;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .genre {
+  color: #E9E9E9;
+  font-family: Inria Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+#modal-movie .bloc_item .movie_item .info .infos_body {
+  color: #FFF;
+  font-family: Inria Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: 0.48px;
 }
 
 .modal-register {
@@ -828,16 +907,95 @@ footer .footer-container p {
   left: 50%;
   transform: translate(-50%, -50%);
   height: 650px;
+  width: 745px;
+  background-color: black;
 }
-#modal-movie .movie_item {
+#modal-movie .bloc_item .btn_modal_movie_off {
+  color: white;
+}
+#modal-movie .bloc_item .movie_item {
+  padding-left: 75px;
+  padding-right: 75px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 60px;
+  height: 550px;
 }
-#modal-movie .movie_item .info {
+#modal-movie .bloc_item .movie_item img {
+  width: 234px;
+  height: 351px;
+}
+#modal-movie .bloc_item .movie_item .info {
+  padding-top: 75px;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .title-date {
+  display: flex;
+  flex-direction: column;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .title-date .title {
+  color: #C00;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-family: Inria Sans;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .title-date .date {
+  color: #fff;
+  font-family: Inria Sans;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .note-info {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .note-info .bxs-star {
+  color: #C00;
+  font-size: 20px;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .note-info .note {
+  width: 33px;
+  height: 26px;
+  flex-shrink: 0;
+  color: #C00;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+}
+#modal-movie .bloc_item .movie_item .info .infos_head .genre {
+  color: #E9E9E9;
+  font-family: Inria Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+#modal-movie .bloc_item .movie_item .info .infos_body {
+  color: #FFF;
+  font-family: Inria Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: 0.48px;
 }
 
 .modal-register {
@@ -955,7 +1113,7 @@ footer .footer-container p {
 @media screen and (max-width: 1100px) {
   .grid-latest-release {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 }

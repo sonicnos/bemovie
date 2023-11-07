@@ -6,17 +6,106 @@
   left: 50%;
   transform: translate(-50%,-50%);
   height: 650px;
-  //background-color: black;
-  .movie_item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    .info {
+  width: 745px;
+  background-color: black;
+
+  .bloc_item{
+
+    .btn_modal_movie_off {
+      color: white
+    }
+    .movie_item {
+      img {
+        width: 234px;
+        height: 351px;
+      }
+      
+      padding-left: 75px;
+      padding-right: 75px;
+      width: 100%;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      height: 550px;
+  
+      .info {
+        padding-top: 75px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+  
+        .infos_head {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          .title-date {
+            display: flex;
+            flex-direction: column;
+            .title {
+              color: $red;
+              font-size: 1.25rem;
+              font-weight: 700;
+              letter-spacing: 0.6px;
+              text-transform: uppercase;
+              font-family: Inria Sans;
+            }
+    
+            .date {
+              color: $white;
+              font-family: Inria Sans;
+              font-size: 0.875rem;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              letter-spacing: 0.42px;
+              text-transform: uppercase;
+            }
+  
+          }
+          .note-info {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            .bxs-star {
+              color: $red;
+              font-size: 20px;
+            }
+  
+            .note {
+                  width: 33px;
+                  height: 26px;
+                  flex-shrink: 0;
+                  color: #C00;
+                  font-family: Inter;
+                  font-size: 20px;
+                  font-style: normal;
+                  font-weight: 700;
+            }
+          }
+          .genre {
+            color: #E9E9E9;
+            font-family: Inria Sans;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0.42px;
+            text-transform: uppercase;
+          }
+        }
+        .infos_body {
+          color: #FFF;
+          font-family: Inria Sans;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 150%;
+          letter-spacing: 0.48px;
+        }
+      }
     }
   }
+  
 }
 
 .modal-register {
