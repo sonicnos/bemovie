@@ -211,7 +211,7 @@ genreCategory.querySelectorAll('li').forEach(li => {
 // Modal INFOS MOVIES
 function clearModalMovie() {
   modalMovie.querySelector('.title').innerText = ""
-  modalMovie.querySelector('img').getAttribute('src') = ""
+  // modalMovie.querySelector('img').getAttribute('src') = ""
   modalMovie.querySelector('.date').innerText = ""
   modalMovie.querySelector('.note').innerText = ""
   modalMovie.querySelector('.txt').innerText = ""
